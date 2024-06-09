@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Nirvana Library</title>
+  </head>
+  <body>
+    <div class="menu_bar">
+      <h1 class="logo">Nirvana<span>Library.</span></h1>
+
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li>
+          <a href="*">Modul <i class="fas fa-caret-down"></i></a>
+          <div class="dropdown4">
+            <ul>
+              <li>
+                <a href="#">Modul 1 <i class="fas fa-caret-right"></i></a>
+              <div class="dropdown4-1">
+                <ul>
+                  <li><a href="perpustakaan.html">Perpustakaan</a></li>
+                  <li><a href="modul 1.2.html">Audio Video</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Modul 2 <i class="fas fa-caret-right"></i></a>
+              <div class="dropdown4-1">
+              <ul>
+                <li><a href="form.html">Form</a></li>
+                <li><a href="Tabel.html">Tabel</a></li>
+              </ul>
+              </li>
+              <li><a href="#">Modul 3</a></li>
+            <li><a href="#">Modul 4 <i class="fas fa-caret-right"></i></a>
+              <div class="dropdown4-1">
+                <ul>
+                  <li><a href="%">Tabel Bordered</a></li>
+                  <li><a href="%">Form Button</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Modul <i class="fas fa-caret-right"></i></a>
+              <div class="dropdown4-1">
+                <ul>
+                  <li><a href="@">M. 5</a></li>
+                  <li><a href="Jquery.html">M. 6</a></li>
+                </ul>
+            </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="*">Layanan</a></li>
+        <li><a href="koleksi.html">Koleksi</a></li>
+        <li><a href="*">Berita dan Pengumuman</a></li>
+      </ul>
+    </div>
+    <div>
+      <style>
+        p {
+            font-size: 1.2em;
+            color: #333;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button#hide {
+            background-color: #dc3545;
+        }
+
+        button#show {
+            background-color: #28a745;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
+</head>
+<body>
+
+<p>haloo, jika menekan tombol "hide" maka akan menghilang, jika menekan tombol "show" maka akan muncul.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+    </div>
+  </body>
+</html>
