@@ -50,95 +50,72 @@
             </ul>
           </div>
         </li>
-        <li><a href="#">Layanan</a></li>
+        <li><a href="layanan.html">Layanan</a></li>
         <li><a href="koleksi.html">Koleksi</a></li>
         <li><a href="#">Berita dan Pengumuman</a></li>
-        <li><a href="#">Login</a></li>
       </ul>
     </div>
     <div>
-      <style>
-        p {
-            font-size: 1.2em;
-            color: #333;
-            margin: 20px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 1em;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px;
-        }
-
-        button#hide {
-            background-color: #dc3545;
-        }
-
-        button#show {
-            background-color: #28a745;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-    </style>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#hide").click(function(){
-    $("p").hide();
-  });
-  $("#show").click(function(){
-    $("p").show();
-  });
-});
-</script>
-</head>
-<body>
-
-<p>haloo, jika menekan tombol "hide" maka akan menghilang, jika menekan tombol "show" maka akan muncul.</p>
-
-<button id="hide">Hide</button>
-<button id="show">Show</button>
-
-    </div>
-        <section class="hero">
-      &nbsp;
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section about">
-            <h2 class="logo-text">Nirvana Library</h2>
-            <div class="contact">
-              <span><i class="fas fa-phone"></i>021-634572</span>
-              <span><i class="fas fa-envelope"></i>Nirvana@library.com</span>
+      <script> 
+      $(document).ready(function(){
+        $("#flip").click(function(){
+          $("#panel").slideDown("slow");
+        });
+      });
+      </script>
+      <style> 
+      #panel, #flip {
+        padding: 5px;
+        text-align: left;
+        background-color: #fcfcfc;
+        border: solid 1px #fcfcfc;
+      }
+      
+      #panel {
+        padding: 50px;
+        display: none;
+      }
+      </style>
+      </head>
+      <body>
+       
+      <div id="flip"><h2>jQuery</h2></div>
+      <div id="panel">sebuah pustaka JavaScript yang dirancang untuk menyederhanakan manipulasi HTML, penanganan acara (event handling), animasi, dan interaksi Ajax. Dikembangkan oleh John Resig pada tahun 2006, jQuery telah menjadi salah satu pustaka JavaScript yang paling populer dan banyak digunakan di dunia pengembangan web.</div>
+      
+      <section class="hero">
+        &nbsp;
+      </section>
+  
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section about">
+              <h2 class="logo-text">Nirvana Library</h2>
+              <div class="contact">
+                <span><i class="fas fa-phone"></i>021-634572</span>
+                <span><i class="fas fa-envelope"></i>Nirvana@library.com</span>
+              </div>
+              <div class="socials">
+                <a href="?"><i class="fab fa-facebook"></i></a>
+                <a href="?"><i class="fab fa-twitter"></i></a>
+                <a href="?"><i class="fab fa-instagram"></i></a>
+              </div>
             </div>
-            <div class="socials">
-              <a href="?"><i class="fab fa-facebook"></i></a>
-              <a href="?"><i class="fab fa-twitter"></i></a>
-              <a href="?"><i class="fab fa-instagram"></i></a>
+            <div class="footer-section links">
+              <ul>
+                <li><a href="/">Tentang Kami</a></li>
+                <li><a href="koleksi.html">Koleksi Buku</a></li>
+                <li><a href="layanan.html">Layanan</a></li>
+                <li><a href="/">Kontak</a></li>
+              </ul>
             </div>
-          </div>
-          <div class="footer-section links">
-            <ul>
-              <li><a href="/">Tentang Kami</a></li>
-              <li><a href="koleksi.html">Koleksi Buku</a></li>
-              <li><a href="/">Layanan</a></li>
-              <li><a href="/">Kontak</a></li>
-            </ul>
           </div>
         </div>
-      </div>
-      <div class="footer-bottom">
-      <p>&copy; 2024 made by Nirvana Library.</p>
-      </div>
-    </footer>
-  </body>
-</html>
+        <div class="footer-bottom">
+        <p>&copy; 2024 made by Nirvana Library.</p>
+        </div>
+      </footer>
+      </body>
+      </html>
+      
