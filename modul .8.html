@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mod.8</title>
+    <body>
+      <div class="menu_bar">
+        <h1 class="logo">Nirvana<span>Library.</span></h1>
+  
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li>
+            <a href="#">Modul <i class="fas fa-caret-down"></i></a>
+            <div class="dropdown4">
+              <ul>
+                <li>
+                  <a href="#">Modul 1 <i class="fas fa-caret-right"></i></a>
+                <div class="dropdown4-1">
+                  <ul>
+                    <li><a href="perpustakaan.html">Perpustakaan</a></li>
+                    <li><a href="modul 1.2.html">Audio Video</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Modul 2 <i class="fas fa-caret-right"></i></a>
+                <div class="dropdown4-1">
+                <ul>
+                  <li><a href="form.html">Form</a></li>
+                  <li><a href="Tabel.html">Tabel</a></li>
+                </ul>
+                </li>
+                <li><a href="#">Modul 3</a></li>
+              <li><a href="#">Modul 4 <i class="fas fa-caret-right"></i></a>
+                <div class="dropdown4-1">
+                  <ul>
+                    <li><a href="#">Tabel Bordered</a></li>
+                    <li><a href="#">Form Button</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">Modul  <i class="fas fa-caret-right"></i></a>
+                <div class="dropdown4-1">
+                  <ul>
+                    <li><a href="modul .8.html">M. 5</a></li>
+                    <li><a href="Jquery.html">M. 6</a></li>
+                  </ul>
+              </li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="koleksi.html">Koleksi</a></li>
+          <li><a href="berita-dan-pengumuman.html">Berita dan Pengumuman</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        text-align: center;
+        padding: 25px 0;
+        color: #120e0e60;
+      }
+
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        padding: 20px;
+        text-align: left;
+        border-bottom: 3px solid #153448;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      form {
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: calc(100% - 1px);
+        padding: 15px;
+        margin-bottom: 10px;
+        border: 3px solid #022546;
+        border-radius: 10px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #153448;
+        color: white;
+        padding: 15px 35px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #153448;
+      }
+
+      @media (max-width: 768px) {
+        table {
+          width: 100%;
+        }
+
+        form {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DATABASE PERPUSTAKAAN</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>JUDUL</th>
+          <th>PENULIS</th>
+          <th>TAHUN</th>
+          <th>ISBN</th>
+          <th>EDIT</th>
+        </tr>
+      </thead>
+      <tbody id="libraryBody">
+        <!-- Data rows will be inserted here by JavaScript -->
+      </tbody>
+    </table>
+
+    <form id="libraryForm">
+      <input type="hidden" id="editIndex" />
+      <input type="text" id="title" placeholder="Title" required />
+      <input type="text" id="author" placeholder="Author" required />
+      <input type="number" id="year" placeholder="Year" required />
+      <input type="text" id="isbn" placeholder="ISBN" required />
+      <button type="button" onclick="addOrUpdateBook()">
+        Tambah/Perbaharui
+      </button>
+    </form>
+
+    <script>
+      let libraryData = [
+        {
+          title: "Anjanu",
+          author: " Fincalogy",
+          year: 2024,
+          isbn: "9786022081616",
+        },
+        {
+          title: "117 Tip & Trik Microsoft Office 2007",
+          author: "Catur Hadi Purnomo",
+          year: 2007,
+          isbn: "979 (10) 794-073-X",
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        displayLibrary();
+      });
+
+      function displayLibrary() {
+        const tbody = document.getElementById("libraryBody");
+        tbody.innerHTML = "";
+        libraryData.forEach((book, index) => {
+          const row = tbody.insertRow();
+          row.innerHTML = `
+            <td>${book.title}</td>
+            <td>${book.author}</td>
+            <td>${book.year}</td>
+            <td>${book.isbn}</td>
+            <td>
+                <button onclick="editBook(${index})">Edit</button>
+                <button onclick="deleteBook(${index})">Hapus</button>
+            </td>
+        `;
+        });
+      }
+
+      function addOrUpdateBook() {
+        const title = document.getElementById("title").value;
+        const author = document.getElementById("author").value;
+        const year = document.getElementById("year").value;
+        const isbn = document.getElementById("isbn").value;
+        const editIndex = document.getElementById("editIndex").value;
+
+        const book = { title, author, year, isbn };
+
+        if (editIndex === "") {
+          libraryData.push(book);
+        } else {
+          libraryData[editIndex] = book;
+          document.getElementById("editIndex").value = "";
+        }
+
+        document.getElementById("libraryForm").reset();
+        displayLibrary();
+      }
+
+      function editBook(index) {
+        const book = libraryData[index];
+        document.getElementById("title").value = book.title;
+        document.getElementById("author").value = book.author;
+        document.getElementById("year").value = book.year;
+        document.getElementById("isbn").value = book.isbn;
+        document.getElementById("editIndex").value = index;
+      }
+
+      function deleteBook(index) {
+        libraryData.splice(index, 1);
+        displayLibrary();
+      }
+    </script>
+  </body>
+</html>
